@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import java.applet.*;
 import java.util.Random;
 public class SharknChainsaw extends Applet implements KeyListener{
@@ -13,7 +12,7 @@ public class SharknChainsaw extends Applet implements KeyListener{
 		int y = 0;
 		do{
 			fish.right(g, 10, y, Color.red);
-			Delay.delay(20);
+			Delay.delay(10);
 			fish.right(g, 10, y, Color.blue);
 			y += 1;
 			//Delay.delay(10);
