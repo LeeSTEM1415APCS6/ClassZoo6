@@ -10,24 +10,23 @@ public class SharknChainsaw extends Applet implements KeyListener{
 		fish.left(g, 300, 150, Color.green);
 		int x = 10;
 		int y = 10;
+		int z = 20;
 		int x2 = 200;
 		int y2 = 20;
 		int xgo = x2 - x;
 		int ygo = y2 - x;
-		do{
 			do{
 				
 			fish.right(g, x, y, Color.red);
-			Delay.delay(30);
+			fish.right(g, z, y, Color.yellow);
+			Delay.delay(50);
 			fish.right(g, x, y, Color.blue);
-			y += 1;
-			//Delay.delay(10);
-			}while (y <= 5);
-			fish.right(g, x, y, Color.red);
-			Delay.delay(30);
-			fish.right(g, x, y, Color.blue);
+			fish.right(g, z, y, Color.blue);
+			y += 5;
 			x += 1;
-		}while (x <= 100);
+			z += 2;
+			//Delay.delay(10);
+			}while (y <= 500);
 	}
 
 	@Override
