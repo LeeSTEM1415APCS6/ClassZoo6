@@ -4,28 +4,26 @@ import java.applet.*;
 import java.util.Random;
 public class SharknChainsaw extends Applet implements KeyListener{
 	public void paint(Graphics g){
+		Random rand = new Random();
 		g.setColor(Color.blue);
 		g.fillRect(0, 0, 800, 800);
 		fish.right(g, 100, 100, Color.red);
 		fish.left(g, 300, 150, Color.green);
+		int a = rand.nextInt(501);
+		int b = rand.nextInt(501);
 		int x = 10;
 		int y = 10;
-		int z = 20;
-		int x2 = 200;
-		int y2 = 20;
-		int xgo = x2 - x;
-		int ygo = y2 - x;
+		int x2 = a - y;
+		int y2 = b - x;
+		int xgo ;
+		int ygo ;
 			do{
 				
 			fish.right(g, x, y, Color.red);
-			fish.right(g, z, y, Color.yellow);
-			Delay.delay(50);
+			Delay.delay(70);
 			fish.right(g, x, y, Color.blue);
-			fish.right(g, z, y, Color.blue);
 			y += 5;
-			x += 1;
-			z += 2;
-			//Delay.delay(10);
+			x += 2;
 			}while (y <= 500);
 	}
 
