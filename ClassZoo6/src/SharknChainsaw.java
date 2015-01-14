@@ -9,22 +9,40 @@ public class SharknChainsaw extends Applet implements KeyListener{
 		g.fillRect(0, 0, 800, 800);
 		fish.right(g, 100, 100, Color.red);
 		fish.left(g, 300, 150, Color.green);
-		int a = rand.nextInt(501);
-		int b = rand.nextInt(501);
-		int x = 10;
-		int y = 10;
-		int x2 = a - y;
-		int y2 = b - x;
-		int xgo ;
-		int ygo ;
+		int x = 0;
+		int y = 0;
+		int p = 1;
+		do{
+		double a = rand.nextInt(501);
+		double b = rand.nextInt(501);
+		double x2 = a - x;
+		double y2 = b - x;
+		System.out.println(x2 + " " + y2);
+		if (Math.abs(x2) > Math.abs(y2)){
+			double xplus = Math.ceil(x2 / y2);
+			double yplus = Math.ceil(y2 / y2);
+			System.out.println(xplus + " " + yplus);
 			do{
-				
-			fish.right(g, x, y, Color.red);
-			Delay.delay(70);
-			fish.right(g, x, y, Color.blue);
-			y += 5;
-			x += 2;
-			}while (y <= 500);
+				fish.right(g, x, y, Color.red);
+				Delay.delay(70);
+				fish.right(g, x, y, Color.blue);
+				y += (int) yplus;
+				x += (int) xplus;
+				}while (y != (int)y2 &&  x != (int)x2);
+		}
+		if (Math.abs(y2) > Math.abs(x2)){
+			double xplus = Math.ceil(x2 / x2);
+			double yplus = Math.ceil(y2 / x2);
+			do{
+				fish.right(g, x, y, Color.red);
+				Delay.delay(70);
+				fish.right(g, x, y, Color.blue);
+				y += (int) yplus;
+				x += (int) xplus;
+				}while (y != (int)y2 &&  x != (int)x2);
+		}
+			p++;
+		}while (p > 0);
 	}
 
 	@Override
